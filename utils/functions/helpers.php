@@ -48,6 +48,27 @@ function arr_upr($array, $case = MB_CASE_TITLE)
  */
 function conText($text)
 {
-	$outText = stripslashes(htmlspecialchars(trim($text), ENT_QUOTES));
-	return $outText;
+    $outText = stripslashes(htmlspecialchars(trim($text), ENT_QUOTES));
+    return $outText;
+}
+
+/**
+ * @param string $file
+ * @param array $message
+ * @param boolean $write_file
+ * @return mixed
+ */
+function write_log($file, $message, $write_file = false)
+{
+    if ($write_file == false) return false;
+
+    $message = is_array($message) ? var_export($message, true) : null;
+    $log = function () use ($message, $file) {
+        $nowT = date('Y-m-d h:i:s');
+        $log = "[data {$nowT}] => $message\n";
+        return file_put_contents($file, $log, FILE_APPEND | LOCK_EX);
+    };
+
+    if (file_exists($file)) return $log();
+    return $log();
 }

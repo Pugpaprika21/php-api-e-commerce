@@ -17,6 +17,8 @@ $api->setUnauthorized();
 
 $product = new ProductController($body);
 
+write_log(__DIR__ . "../../../logs/requests/" . $product::class . ".txt", $body, true);
+
 switch (conText($body['action_type'])) {
     case 'products':
         echo $api->setResponseJSON($product->productList());
