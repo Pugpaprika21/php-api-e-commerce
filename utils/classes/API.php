@@ -160,7 +160,7 @@ class API
 
     public function setMethodAllowed($method = 'POST')
     {
-        if ($_SERVER['REQUEST_METHOD'] != $method) {
+        if ($_SERVER['REQUEST_METHOD'] != strtoupper($method)) {
             header('HTTP/1.1 405 method not allowed');
             echo $this->setResponseJSON(['msg' => '405 method not allowed..'], 405);
             exit;

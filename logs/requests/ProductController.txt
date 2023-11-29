@@ -22,3 +22,45 @@
   'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
   'action_type' => '',
 )
+[data 2023-11-29 12:47:16] => array (
+  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  'action_type' => 'products',
+)
+[data 2023-11-29 12:47:28] => array (
+  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  'action_type' => 'products',
+)
+[data 2023-11-29 12:47:44] => array (
+  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  'action_type' => 'products',
+)
+[data 2023-11-29 12:48:01] => array (
+  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  'action_type' => 'products',
+)
+[data 2023-11-29 12:51:32] => array (
+  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  'action_type' => 'products',
+)
+[data 2023-11-29 12:53:21] => array (
+  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  'action_type' => 'products',
+  'user' => 
+  array (
+    'first_name' => 'pug',
+    'last_name' => 'pug123',
+    'email' => 'pug@gmail.com',
+    'password' => '1234',
+  ),
+)
+[data 2023-11-29 12:54:18] => array (
+  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  'action_type' => 'products',
+  'user' => 
+  array (
+    'first_name' => 'pug',
+    'last_name' => 'pug123',
+    'email' => 'pug@gmail.com',
+    'password' => '1234',
+  ),
+)

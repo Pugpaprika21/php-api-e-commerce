@@ -19,16 +19,18 @@ $product = new ProductController($body);
 
 write_log(__DIR__ . "../../../logs/requests/" . $product::class . ".txt", $body, true);
 
-switch (conText($body['action_type'])) {
-    case 'products':
-        echo $api->setResponseJSON($product->productList());
-        break;
+if (!empty($body['action_type'])) {
+    switch (conText($body['action_type'])) {
+        case 'products':
+            echo $api->setResponseJSON($product->productList());
+            break;
 
-    case 'get_all':
-        echo $api->setResponseJSON(['name' => 'get_all']);
-        break;
+        case 'get_all':
+            echo $api->setResponseJSON(['name' => 'get_all']);
+            break;
 
-    default:
-        echo $api->setResponseJSON(['msg' => 'no data..'], 204);
-        break;
+        default:
+            echo $api->setResponseJSON(['msg' => 'no data..'], 204);
+            break;
+    }
 }
