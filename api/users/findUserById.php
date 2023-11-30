@@ -8,7 +8,7 @@ $api->setUnauthorized();
 
 $user = new UserController($request);
 
-write_log(__DIR__ . "../../../logs/requests/" . $user::class . ".txt", $request, true);
+write_log(__DIR__ . "../../../logs/requests/" . $user::class . ".txt", $request, $env['WRITE_LOG']);
 
 echo $api->setResponseJSON($user->findUserById());
 exit;

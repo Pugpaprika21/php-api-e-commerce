@@ -8,7 +8,7 @@ $api->setUnauthorized();
 
 $order = new OrdersController($request);
 
-write_log(__DIR__ . "../../../logs/requests/" . $order::class . ".txt", $request, true);
+write_log(__DIR__ . "../../../logs/requests/" . $order::class . ".txt", $request, $env['WRITE_LOG']);
 
 echo $api->setResponseJSON($order->create());
 exit;

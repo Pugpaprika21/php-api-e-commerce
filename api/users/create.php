@@ -12,7 +12,7 @@ $api->setUnauthorized();
 
 $user = new UserController($body);
 
-write_log(__DIR__ . "../../../logs/requests/" . $user::class . ".txt", $body, true);
+write_log(__DIR__ . "../../../logs/requests/" . $user::class . ".txt", $body, $env['WRITE_LOG']);
 
 echo $api->setResponseJSON($user->create());
 exit;

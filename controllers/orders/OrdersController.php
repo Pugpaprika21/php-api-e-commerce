@@ -15,7 +15,7 @@ class OrdersController extends BaseController
         if (count($orders) > 0) {
             return ['status' => 200, 'data' => $orders];
         }
-        return ['status' => 204, 'data' => $orders];
+        return ['status' => 200, 'data' => $orders];
     }
 
     public function create()
