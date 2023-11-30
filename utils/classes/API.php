@@ -152,9 +152,13 @@ class API
         return json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 
-    public function setResponseJSON($arr, $statusCODE = 200)
+    public function setResponseJSON($arr, $statusCode = 200)
     {
-        http_response_code($statusCODE);
+        if (!empty($arr['status'])) {
+            $statusCode = $arr['status'];
+        }
+
+        http_response_code($statusCode);
         return json_encode(arr_upr(array('data' => $arr)), JSON_UNESCAPED_UNICODE);
     }
 
@@ -169,9 +173,9 @@ class API
 
     public function setUnauthorized()
     {
-        global $env, $body;
-
-        if ($env['APP_API_KEY'] != conText($body['APP_API_KEY'])) {
+        global $env, $request;
+        
+        if ($env['APP_API_KEY'] != conText($request['APP_API_KEY'])) {
             header('HTTP/1.1 401 Unauthorized');
             echo $this->setResponseJSON(['msg' => '401 Unauthorized..'], 401);
             exit;

@@ -27,3 +27,8 @@ if (!empty($env['CORS'])) {
     header("Access-Control-Allow-Origin: *");
     header("Content-type: application/json");
 }
+
+if (!empty($env['CLASS_API']) && $env['CLASS_API'] == true) { 
+    $api = new API();
+    $request = $api->setRequest();
+}
