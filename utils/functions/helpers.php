@@ -21,19 +21,23 @@ function dump()
 }
 
 /**
- * @param array $array
+ * @param array|object $input
  * @param int $case
  * @return array
  */
-function arr_upr($array, $case = MB_CASE_TITLE)
+function arr_upr($input, $case = MB_CASE_TITLE)
 {
     $convToCamel = function ($str) {
         return str_replace(' ', '', ucwords(str_replace('_', ' ', $str)));
     };
 
+    if (is_object($input)) {
+        $input = get_object_vars($input);
+    }
+
     $newArray = array();
-    foreach ($array as $key => $value) {
-        if (is_array($value)) {
+    foreach ($input as $key => $value) {
+        if (is_array($value) || is_object($value)) {
             $newArray[$convToCamel($key)] = arr_upr($value, $case);
         } else {
             $newArray[$convToCamel($key)] = $value;
