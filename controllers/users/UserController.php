@@ -47,5 +47,7 @@ class UserController extends BaseController
         self::store($user);
 
         return ['status' => 200, 'msg' => 'create user successfully..'];
+
+        
     }
 }
