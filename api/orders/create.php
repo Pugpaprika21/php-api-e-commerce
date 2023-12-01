@@ -10,8 +10,5 @@ $order = new OrdersController($request);
 
 write_log(__DIR__ . "../../../logs/requests/" . $order::class . ".txt", $request, $env['WRITE_LOG']);
 
-$response = $api->setResponseJSON($order->create());
-
-write_log(__DIR__ . "../../../logs/response/" . $order::class . ".txt", $response, $env['WRITE_LOG']);
-echo $response;
+echo $api->setResponseJSON($order->create());
 exit;
