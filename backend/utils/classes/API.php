@@ -39,10 +39,14 @@ class API
     {
         $this->parseRequestData();
 
-        return array_merge($this->request, [
-            'QueryString' => $_GET,
-            'FormFile' => $_FILES
-        ]);
+        if (!empty($this->request)) {
+            $reqs = array_merge($this->request, [
+                'QueryString' => $_GET,
+                'FormFile' => $_FILES
+            ]);
+        }
+
+        return $reqs;
     }
 
     private function parseRequestData()
@@ -67,8 +71,11 @@ class API
             $this->type = '_GET';
         }
 
-        if ($_GET && $this->urlGet) {
+        if (!empty($this->request)) {
             $this->request = array_merge($this->request, $_GET);
+        } else {
+            unset($str);
+            $this->request = array_merge($_REQUEST, $_GET, [file_get_contents("php://input")]);
         }
     }
 

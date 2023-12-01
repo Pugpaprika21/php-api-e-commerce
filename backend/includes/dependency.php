@@ -8,7 +8,7 @@ require(__DIR__ . "../../configs/app.php");
 require(__DIR__ . "{$utils}functions/db.php");
 require(__DIR__ . "{$utils}functions/helpers.php");
 require(__DIR__ . "{$utils}classes/RB.php");
-require(__DIR__ . "{$utils}classes/API.php");
+require(__DIR__ . "{$utils}classes/APIService.php");
 require(__DIR__ . "../../controllers/BaseController.php");
 
 date_default_timezone_set('Asia/Bangkok');
@@ -24,13 +24,13 @@ if (!empty($env['DB_NAME'])) {
     R::debug(false);
 }
 
+if (!empty($env['CLASS_API']) && $env['CLASS_API'] == true) { 
+    $api = new APIService();
+    $request = $api->getRequest();
+}
+
 if (!empty($env['CORS']) && $env['CORS'] == true) {
     foreach($apps['cors'] as $cors) {
         header($cors);
     }
-}
-
-if (!empty($env['CLASS_API']) && $env['CLASS_API'] == true) { 
-    $api = new API();
-    $request = $api->setRequest();
 }
