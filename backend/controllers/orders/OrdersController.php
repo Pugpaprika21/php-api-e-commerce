@@ -11,11 +11,24 @@ class OrdersController extends BaseController
 
     public function ordersAll()
     {
-        $orders = $this->exportAll($this->findAll('orders', 'ORDER BY created_at DESC'));
+        $orders = $this->exportAll($this->findAll('orders', 'order by created_at desc'));
         if (count($orders) > 0) {
             return ['status' => 200, 'data' => $orders];
         }
         return ['status' => 200, 'data' => $orders];
+    }
+
+    public function getOrderById()
+    {
+        $body = $this->request['QueryString'];
+
+        $orderId = conText($body['order_id']);
+        $order = $this->findOne('orders', 'id = ?', [$orderId]);
+        if ($order) {
+            $order = $this->exportAll($order)[0];
+            return ['status' => 200, 'data' => $order];
+        }
+        return ['status' => 204];
     }
 
     public function create()
