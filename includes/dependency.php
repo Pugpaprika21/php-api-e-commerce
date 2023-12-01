@@ -4,11 +4,13 @@ $env = parse_ini_file(__DIR__ . "../../.env");
 
 $utils = "../../utils/";
 
-require(__DIR__ . "{$utils}classes/RB.php");
 require(__DIR__ . "{$utils}functions/db.php");
 require(__DIR__ . "{$utils}functions/helpers.php");
+require(__DIR__ . "{$utils}classes/RB.php");
 require(__DIR__ . "{$utils}classes/API.php");
 require(__DIR__ . "../../controllers/BaseController.php");
+
+date_default_timezone_set('Asia/Bangkok');
 
 // ini_set('log_errors', 'on');
 // ini_set('display_errors', 'off');
