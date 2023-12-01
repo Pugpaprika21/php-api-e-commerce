@@ -23,7 +23,7 @@ if (!empty($env['DB_NAME'])) {
     R::debug(false);
 }
 
-if (!empty($env['CORS'])) {
+if (!empty($env['CORS']) && $env['CORS'] == true) {
     header("Access-Control-Allow-Methods: *");
     header("Access-Control-Allow-Headers: *");
     header("Access-Control-Allow-Origin: *");
