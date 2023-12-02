@@ -12,7 +12,50 @@ export default {
     };
   },
   methods: {
+    handleNumericInput(field) {
+      this.formProduct[field] = this.formProduct[field].replace(/[^0-9.]/g, "");
+      let parts = this.formProduct[field].split(".");
+      if (parts.length > 2) {
+        this.formProduct[field] = `${parts[0]}.${parts[1]}`;
+      }
+    },
     formCreateProduct: function () {
+      if (this.formProduct.name == "") {
+        this.$swal.fire({
+          title: "ใส่ชื่อสินค้า...",
+          text: "",
+          icon: "warning",
+          timer: 1000,
+        });
+        return;
+      }
+      if (this.formProduct.description == "") {
+        this.$swal.fire({
+          title: "ใส่รายละเอียดสินค้า...",
+          text: "",
+          icon: "warning",
+          timer: 1000,
+        });
+        return;
+      }
+      if (this.formProduct.price == "") {
+        this.$swal.fire({
+          title: "ใส่ราคาสินค้า...",
+          text: "",
+          icon: "warning",
+          timer: 1000,
+        });
+        return;
+      }
+      if (this.formProduct.stock_quantity == "") {
+        this.$swal.fire({
+          title: "ใส่จำนวนสินค้า...",
+          text: "",
+          icon: "warning",
+          timer: 1000,
+        });
+        return;
+      }
       axios
         .post(`${process.env.VUE_BACKEND_URL}products/productCreate.php`, {
           APP_API_KEY: process.env.APP_API_KEY,
@@ -24,7 +67,18 @@ export default {
           },
         })
         .then((response) => {
-          console.log(response.data);
+          if (response.status == 200) {
+            this.$swal
+              .fire({
+                title: response.data.data.Msg,
+                text: "",
+                icon: "success",
+                timer: 1000,
+              })
+              .then((result) => {
+                this.$router.go(0);
+              });
+          }
         })
         .catch((err) => {
           console.log(err);
@@ -37,9 +91,12 @@ export default {
 <template>
   <div class="row" id="product-create">
     <form method="post" @submit.prevent="formCreateProduct()">
-      <div class="col-md-12">
-        <p>เพิ่มสินค้า</p>
-        <div class="create-product">
+      <p>
+        <span class="badge rounded-pill text-bg-primary">เพิ่มสินค้า</span>
+      </p>
+      <div class="row">
+        <div class="col-md-2">ชื่อสินค้า</div>
+        <div class="col-md-10">
           <div class="mb-3">
             <input
               type="text"
@@ -47,6 +104,11 @@ export default {
               v-model="formProduct.name"
             />
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">รายละเอียด</div>
+        <div class="col-md-10">
           <div class="mb-3">
             <textarea
               class="form-control"
@@ -54,20 +116,30 @@ export default {
               rows="3"
             ></textarea>
           </div>
-
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">ราคา</div>
+        <div class="col-md-10">
           <div class="mb-3">
             <input
               type="text"
               class="form-control"
               v-model="formProduct.price"
+              @input="handleNumericInput('price')"
             />
           </div>
-
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">คลัง (ชิ้น)</div>
+        <div class="col-md-10">
           <div class="mb-3">
             <input
               type="text"
               class="form-control"
               v-model="formProduct.stock_quantity"
+              @input="handleNumericInput('stock_quantity')"
             />
           </div>
         </div>

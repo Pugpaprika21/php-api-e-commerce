@@ -8,6 +8,12 @@ class ProductController extends BaseController
     {
         $this->request = $body;
     }
+    
+    public function productAll()
+    { 
+        $products = $this->exportAll($this->findAll('products', 'ORDER BY created_at DESC LIMIT 5'));
+        return ['status' => 200, 'msg' => '', 'data' => $products];
+    }
 
     public function productCreate()
     {
@@ -34,7 +40,7 @@ class ProductController extends BaseController
 
         if ($product) {
             $newProduct = $this->exportAll($product)[0];
-            return ['status' => 200, 'msg' => 'create product successfully..', 'data' => $newProduct];
+            return ['status' => 200, 'msg' => 'เพิ่มสินค้าใหม่เเล้ว..', 'data' => $newProduct];
         }
         return ['status' => 204, 'msg' => 'create product fail..'];
     }

@@ -1,13 +1,20 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
 export default {
-  setup() {},
+  data() {
+    return {
+      appName: ""
+    }
+  },
+  mounted() {  
+    this.appName = process.env.APP_NAME
+  },
 };
 </script>
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg navbar-main">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <RouterLink class="nav-link active" :to="{ name: 'home' }"><b>{{ appName }}</b></RouterLink>
       <button
         class="navbar-toggler"
         type="button"
@@ -22,7 +29,9 @@ export default {
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <RouterLink class="nav-link active" :to="{ name: 'product-home' }">จัดการสินค้า</RouterLink>
+            <RouterLink class="nav-link active" :to="{ name: 'product-home' }"
+              >จัดการสินค้า</RouterLink
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Features</a>
@@ -38,3 +47,11 @@ export default {
     </div>
   </nav>
 </template>
+
+<!--  #3ee0a2 -->
+<style scoped>
+.navbar-main {
+  color: #FFFFFF;
+  background-color: rgba(22, 157, 105, 0.486);
+}
+</style>

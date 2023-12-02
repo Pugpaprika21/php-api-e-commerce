@@ -1,9 +1,11 @@
 <script>
 import ProductsCreateView from "./ProductsCreateView.vue";
+import ProductsTableView from "./ProductsTableView.vue";
 
 export default {
   components: {
     ProductsCreateView,
+    ProductsTableView
   },
 };
 </script>
@@ -11,9 +13,7 @@ export default {
 <template>
   <div class="container" id="product-home-main">
     <ProductsCreateView></ProductsCreateView>
-    <div class="row" id="product-list">
-      <div class="col-md-12">รายการสินค้า</div>
-    </div>
+    <ProductsTableView></ProductsTableView>
   </div>
 </template>
 
