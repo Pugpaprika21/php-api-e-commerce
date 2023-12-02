@@ -6,7 +6,7 @@ class APIService
     {
         if ($_SERVER['REQUEST_METHOD'] != strtoupper($method)) {
             header('HTTP/1.1 405 Method Not Allowed');
-            echo $this->setResponseJSON(['msg' => '405 Method Not Allowed'], 405);
+            echo $this->setResponseJSON(['msg' => '405 Method Not Allowed']);
             exit;
         }
     }
@@ -14,9 +14,6 @@ class APIService
     public function setUnauthorized($key = "")
     {
         global $env;
-
-        dump([$env['APP_API_KEY'], $key]);
-
         if ($env['APP_API_KEY'] != $key) {
             header('HTTP/1.1 401 Unauthorized');
             echo $this->setResponseJSON(['msg' => '401 Unauthorized'], 401);

@@ -3,8 +3,6 @@
 require(__DIR__ . "../../../includes/dependency.php");
 require(__DIR__ . "../../../controllers/orders/OrdersController.php");
 
-//dump($_SERVER['REQUEST_METHOD'], 1);
-
 $api->setMethodAllowed();
 $api->setUnauthorized($request['Ajax']['APP_API_KEY']);
 

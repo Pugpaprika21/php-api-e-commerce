@@ -1,6 +1,6 @@
 <?php
 
-class ProductController extends R
+class ProductController extends BaseController
 {
     private $request;
 
@@ -9,15 +9,33 @@ class ProductController extends R
         $this->request = $body;
     }
 
-    public function productList()
+    public function productCreate()
     {
-        $body = $this->request['user'];
-        //$product = self::getAll("select * from product");
+        $body = $this->request['Ajax']['formProduct'];
 
-        return array(
-            'name' => 'phone',
-            'price' => 5000,
-            $body
-        );
+        $product = $this->dispense('products');
+
+        $name = conText($body['name']);
+
+        $existingProduct = $this->findOne('products', 'username = ?', [$name]);
+        
+        if ($existingProduct) {
+            return ['status' => 204, 'msg' => 'product name is existing..'];
+        }
+
+        $product->name = $name;
+        $product->description = conText($body['description']);
+        $product->price = conText($body['price']);
+        $product->stock_quantity = conText($body['stock_quantity']);
+        $this->store($product);
+        $this->close();
+
+        $product = $this->findOne('products', 'id = ?', [$product->id]);
+
+        if ($product) {
+            $newProduct = $this->exportAll($product)[0];
+            return ['status' => 200, 'msg' => 'create product successfully..', 'data' => $newProduct];
+        }
+        return ['status' => 204, 'msg' => 'create product fail..'];
     }
 }

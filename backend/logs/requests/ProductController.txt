@@ -1,66 +1,125 @@
-[data 2023-11-27] => array (
-  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
-  'action_type' => 'products',
-)
-[data 2023-11-27] => array (
-  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
-  'action_type' => 'products',
-)
-[data 2023-11-27 03:56:30] => array (
-  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
-  'action_type' => 'products',
-)
-[data 2023-11-27 03:57:34] => array (
-  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
-  'action_type' => 'products',
-)
-[data 2023-11-27 04:00:06] => array (
-  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
-  'action_type' => 'products',
-)
-[data 2023-11-27 04:00:10] => array (
-  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
-  'action_type' => '',
-)
-[data 2023-11-29 12:47:16] => array (
-  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
-  'action_type' => 'products',
-)
-[data 2023-11-29 12:47:28] => array (
-  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
-  'action_type' => 'products',
-)
-[data 2023-11-29 12:47:44] => array (
-  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
-  'action_type' => 'products',
-)
-[data 2023-11-29 12:48:01] => array (
-  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
-  'action_type' => 'products',
-)
-[data 2023-11-29 12:51:32] => array (
-  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
-  'action_type' => 'products',
-)
-[data 2023-11-29 12:53:21] => array (
-  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
-  'action_type' => 'products',
-  'user' => 
+[data 2023-12-02 10:27:41] => array (
+  'Post' => 
   array (
-    'first_name' => 'pug',
-    'last_name' => 'pug123',
-    'email' => 'pug@gmail.com',
-    'password' => '1234',
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => 
+  array (
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+    'formProduct' => 
+    array (
+      'name' => 'rq',
+      'description' => 'erqer',
+      'price' => '122',
+      'stock_quantity' => '2232222222',
+    ),
   ),
 )
-[data 2023-11-29 12:54:18] => array (
-  'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
-  'action_type' => 'products',
-  'user' => 
+[data 2023-12-02 10:28:14] => array (
+  'Post' => 
   array (
-    'first_name' => 'pug',
-    'last_name' => 'pug123',
-    'email' => 'pug@gmail.com',
-    'password' => '1234',
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => 
+  array (
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+    'formProduct' => 
+    array (
+      'name' => 'y',
+      'description' => 'erty',
+      'price' => 'ee',
+      'stock_quantity' => 'ee',
+    ),
+  ),
+)
+[data 2023-12-02 10:28:43] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => 
+  array (
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+    'formProduct' => 
+    array (
+      'name' => 'yur',
+      'description' => 'y',
+      'price' => '1',
+      'stock_quantity' => '1',
+    ),
+  ),
+)
+[data 2023-12-02 10:30:51] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => 
+  array (
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+    'formProduct' => 
+    array (
+      'name' => 'มะพร้าว',
+      'description' => 'มะพร้าวน้ำหอม',
+      'price' => 50,
+      'stock_quantity' => 100,
+    ),
+  ),
+)
+[data 2023-12-02 10:38:09] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => 
+  array (
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+    'formProduct' => 
+    array (
+      'name' => 'มะนาว',
+      'description' => 'มะนาวหวานๆ',
+      'price' => 15,
+      'stock_quantity' => 2000,
+    ),
   ),
 )

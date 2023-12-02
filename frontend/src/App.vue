@@ -1,14 +1,13 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
-import ProductList from "./components/products/ProductList.vue";
 </script>
 
 <template>
-  <div class="container-fluid">
+  <header>
     <Navbar></Navbar>
-    <ProductList></ProductList>
-  </div>
+    <RouterView></RouterView>
+  </header>
 </template>
 
 <style scoped>
