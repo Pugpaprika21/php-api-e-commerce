@@ -14,6 +14,11 @@ const router = createRouter({
             path: "/",
             name: "product-home",
             component: ProductsHomeView,
+            // children: [{
+            //     path: 'subcategory',
+            //     name: 'subCategory',
+            //     component: ChildComponent,
+            // }, ]
         }
     ],
 });
