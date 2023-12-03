@@ -57,11 +57,12 @@ export default {
         });
     },
     actionProductEdit: function (productId) {
-      this.$router.push({ path: '/product/home', query: { params: productId } });
+      
+      // this.$router.push({ path: '/product/home', query: { params: productId } });
 
-      const queryParam = this.$route.query.params;
+      // const queryParam = this.$route.query.params;
 
-      console.log(queryParam);
+      // console.log(queryParam);
     },
   },
   mounted() {
