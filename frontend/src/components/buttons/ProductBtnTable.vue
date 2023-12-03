@@ -57,12 +57,22 @@ export default {
         });
     },
     actionProductEdit: function (productId) {
-      
-      // this.$router.push({ path: '/product/home', query: { params: productId } });
-
-      // const queryParam = this.$route.query.params;
-
-      // console.log(queryParam);
+      this.$axios.get(`${process.env.VUE_BACKEND_URL}products/productEdit.php`, {
+          params: {
+            productId: parseInt(productId),
+            APP_API_KEY: process.env.APP_API_KEY,
+          },
+        })
+        .then((response) => {
+          if (response.status == 200) {
+            let productId = response.data.data.Data.Id;
+            window.location.href = "/product/home?params=" + productId;
+            return;
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
   mounted() {

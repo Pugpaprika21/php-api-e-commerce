@@ -39,6 +39,7 @@ body {
 }
 
 .card,
+.dropdown-menu,
 .form-control {
     border-radius: 0px;
 }
