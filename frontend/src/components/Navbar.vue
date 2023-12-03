@@ -29,12 +29,11 @@ export default {
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <RouterLink class="nav-link active" :to="{ name: 'product-home' }"
-              >จัดการสินค้า</RouterLink
+            <RouterLink class="nav-link active" :to="{ name: 'product-home' }" style="color: #FFFFFF;">จัดการสินค้า</RouterLink
             >
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #FFFFFF;">
               Dropdown
             </a>
             <ul class="dropdown-menu">
@@ -45,13 +44,13 @@ export default {
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#" style="color: #FFFFFF;">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="#" style="color: #FFFFFF;">Pricing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <a class="nav-link disabled" aria-disabled="true" style="color: #FFFFFF;">Disabled</a>
           </li>
         </ul>
       </div>
@@ -63,6 +62,6 @@ export default {
 <style scoped>
 .navbar-main {
   color: #FFFFFF;
-  background-color: rgba(22, 157, 105, 0.486);
+  background-color: rgba(54, 14, 109, 0.819) ;
 }
 </style>
