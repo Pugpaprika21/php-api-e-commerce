@@ -1,7 +1,5 @@
 <script>
-import axios from "axios";
-import ProductBtnTableDelete from "../../components/buttons/ProductBtnTableDelete.vue";
-
+import ProductBtnTable from "../../components/buttons/ProductBtnTable.vue";
 export default {
   data() {
     return {
@@ -9,18 +7,16 @@ export default {
     };
   },
   components: {
-    ProductBtnTableDelete,
+    ProductBtnTable,
   },
   methods: {
     getProductAll: function () {
-      axios
-        .get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
+      this.$axios.get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
           APP_API_KEY: process.env.APP_API_KEY,
         })
         .then((response) => {
           if (response.status == 200) {
             this.productsList = response.data.data.Data;
-           // console.log(response.data.data.Data);
           }
         })
         .catch((err) => {
@@ -61,19 +57,45 @@ export default {
             <td>{{ product.StockQuantity }}</td>
             <td>{{ product.CreatedAt }}</td>
             <td>
-              <ProductBtnTableDelete :productId="product.Id">
-                ปุ่มลบ
-              </ProductBtnTableDelete>
+              <ProductBtnTable
+                :action="`delete`"
+                :productId="product.Id"
+              ></ProductBtnTable>
+              &nbsp;
+              <ProductBtnTable
+                :action="`edit`"
+                :productId="product.Id"
+              ></ProductBtnTable>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+  <!-- <ProductBtnTable v-for="action in ['delete', 'edit']" :key="action" :action="action" :productId="product.Id"></ProductBtnTable> -->
 </template>
 
 <style scoped>
 .center-text {
   text-align: center;
+}
+
+.table th, .table td {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 767px) {
+  .table th, .table td {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .table th, .table td {
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 </style>

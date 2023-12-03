@@ -1,5 +1,4 @@
 <script>
-import axios from "axios";
 export default {
   data() {
     return {
@@ -56,8 +55,8 @@ export default {
         });
         return;
       }
-      axios
-        .post(`${process.env.VUE_BACKEND_URL}products/productCreate.php`, {
+
+      this.$axios.post(`${process.env.VUE_BACKEND_URL}products/productCreate.php`, {
           APP_API_KEY: process.env.APP_API_KEY,
           formProduct: {
             name: this.formProduct.name,

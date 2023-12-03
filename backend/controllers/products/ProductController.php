@@ -8,9 +8,9 @@ class ProductController extends BaseController
     {
         $this->request = $body;
     }
-    
+
     public function productAll()
-    { 
+    {
         $products = $this->exportAll($this->findAll('products', 'ORDER BY created_at DESC LIMIT 5'));
         return ['status' => 200, 'msg' => '', 'data' => $products];
     }
@@ -24,7 +24,7 @@ class ProductController extends BaseController
         $name = conText($body['name']);
 
         $existingProduct = $this->findOne('products', 'username = ?', [$name]);
-        
+
         if ($existingProduct) {
             return ['status' => 204, 'msg' => 'product name is existing..'];
         }
@@ -43,5 +43,26 @@ class ProductController extends BaseController
             return ['status' => 200, 'msg' => 'เพิ่มสินค้าใหม่เเล้ว..', 'data' => $newProduct];
         }
         return ['status' => 204, 'msg' => 'create product fail..'];
+    }
+
+    public function productDelete()
+    {
+        $body = $this->request['Ajax'];
+
+        $productId = 0;
+        if (!empty($body['productId'])) {
+            $productId = conText($body['productId']);
+        }
+
+        $product = $this->trash('products', $productId);
+        if ($product) {
+            return ['status' => 200, 'msg' => 'ลบสินค้าสำเร็จ'];
+        }
+        return ['status' => 204, 'msg' => 'ลบสินค้าไม่สำเร็จ'];
+    }
+
+    public function editProduct()
+    {
+        
     }
 }
