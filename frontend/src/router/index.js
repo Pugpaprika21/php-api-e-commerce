@@ -14,7 +14,13 @@ const router = createRouter({
             path: "/product/home",
             name: "product-home",
             component: ProductsHomeView,
-        }
+        },
+
+        // {
+        //     path: "/product/all",
+        //     name: "product-all",
+        //     component: ProductsHomeView,
+        // },
     ],
 });
 

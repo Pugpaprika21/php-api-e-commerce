@@ -198,3 +198,992 @@
   ),
   'Ajax' => NULL,
 )
+[data 2023-12-03 07:40:08] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:08] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:08] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:10] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:10] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:10] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:11] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '29',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '29',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:11] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '29',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '29',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:11] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:47] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => 
+  array (
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+    'formProduct' => 
+    array (
+      'id' => '29',
+      'name' => 'ttwrt',
+      'description' => 'wrtwr',
+      'price' => 1,
+      'stock_quantity' => 1,
+    ),
+  ),
+)
+[data 2023-12-03 07:40:48] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:49] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:49] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:49] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:50] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:51] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:51] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:52] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '17',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '17',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:52] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '17',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '17',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:40:52] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:04] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => 
+  array (
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+    'formProduct' => 
+    array (
+      'id' => '17',
+      'name' => 'ey',
+      'description' => 'ety',
+      'price' => 1,
+      'stock_quantity' => 1,
+    ),
+  ),
+)
+[data 2023-12-03 07:41:04] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:18] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:19] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:19] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:21] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:21] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:21] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:25] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => 
+  array (
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+    'formProduct' => 
+    array (
+      'id' => '31',
+      'name' => 'eeeeeeeeeeeee',
+      'description' => 'ereee',
+      'price' => 56,
+      'stock_quantity' => 888,
+    ),
+  ),
+)
+[data 2023-12-03 07:41:25] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:31] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '29',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '29',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:31] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '29',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '29',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:31] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:33] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '17',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '17',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:33] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:33] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '17',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '17',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:35] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '16',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '16',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:35] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '16',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '16',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:35] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:41:36] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => 
+  array (
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+    'formProduct' => 
+    array (
+      'id' => '16',
+      'name' => 'ะไ',
+      'description' => 'พะ',
+      'price' => 1,
+      'stock_quantity' => 1,
+    ),
+  ),
+)
+[data 2023-12-03 07:41:36] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:42:04] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:42:04] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:42:04] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '54',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:42:05] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:42:05] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:42:05] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:43:33] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:44:32] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:50:09] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:50:09] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:53:42] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:53:42] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:53:51] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+    'productId' => '31',
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+  ),
+  'Ajax' => NULL,
+)
+[data 2023-12-03 07:53:51] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => NULL,
+)

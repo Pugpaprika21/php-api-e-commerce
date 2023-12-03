@@ -11,7 +11,8 @@ export default {
   },
   methods: {
     getProductAll: function () {
-      this.$axios.get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
+      this.$axios
+        .get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
           APP_API_KEY: process.env.APP_API_KEY,
         })
         .then((response) => {
@@ -33,7 +34,7 @@ export default {
 <template>
   <div class="row" id="product-list">
     <div class="col-md-12">
-      <span class="badge rounded-pill text-bg-primary">รายการสินค้า</span>
+      <span class="badge rounded-pill text-bg-primary">รายการสินค้า <a class="link-offset-2 link-underline link-underline-opacity-0" href="#" style="color: azure;">(ดูทั้งหมด)</a></span>
     </div>
     <div class="product-table-list">
       <table class="table table-hover align-middle">
@@ -80,18 +81,21 @@ export default {
   text-align: center;
 }
 
-.table th, .table td {
+.table th,
+.table td {
   font-size: 14px;
 }
 
 @media screen and (max-width: 767px) {
-  .table th, .table td {
+  .table th,
+  .table td {
     font-size: 12px;
   }
 }
 
 @media screen and (max-width: 575px) {
-  .table th, .table td {
+  .table th,
+  .table td {
     font-size: 10px;
     white-space: nowrap;
     overflow: hidden;
