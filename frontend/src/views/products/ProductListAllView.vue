@@ -18,8 +18,7 @@ export default {
   },
   methods: {
     getProductAll: function () {
-      this.$axios
-        .get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
+      this.$axios.get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
           params: {
             limit: this.filterProduct.limit,
             search: this.filterProduct.search,
@@ -68,6 +67,7 @@ export default {
                 <option v-for="i in 10" :key="i" :value="i * 10">
                   {{ i * 10 }}
                 </option>
+                <option value="1000">ทั้งหมด</option>
               </select>
             </div>
           </div>

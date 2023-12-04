@@ -18,7 +18,7 @@ export default {
     };
   },
   methods: {
-    handleNumericInput(field) {
+    handleNumericInput: function(field) {
       this.formProduct[field] = this.formProduct[field].replace(/[^0-9.]/g, "");
       let parts = this.formProduct[field].split(".");
       if (parts.length > 2) {
@@ -31,7 +31,7 @@ export default {
         return;
       }
       if (this.formProduct.description == "") {
-        this.$swal.fire({ title: "ใส่รายละเอียดสินค้า...", text: "", icon: "warning", timer: 1000});
+        this.$swal.fire({title: "ใส่รายละเอียดสินค้า...", text: "", icon: "warning", timer: 1000});
         return;
       }
       if (this.formProduct.price == "") {
@@ -70,7 +70,8 @@ export default {
         });
     },
     formUpdateProduct: function () {
-      this.$axios.put(`${process.env.VUE_BACKEND_URL}products/productUpdate.php`, {
+      this.$axios
+        .put(`${process.env.VUE_BACKEND_URL}products/productUpdate.php`, {
           APP_API_KEY: process.env.APP_API_KEY,
           formProduct: {
             id: this.formProduct.id,
@@ -101,7 +102,8 @@ export default {
     getProductIdUseUpdateProduct: function () {
       let productId = this.$route.query.params;
       if (productId != undefined) {
-        this.$axios.get(`${process.env.VUE_BACKEND_URL}products/productEdit.php`, {
+        this.$axios
+          .get(`${process.env.VUE_BACKEND_URL}products/productEdit.php`, {
             params: {
               productId: parseInt(productId),
               APP_API_KEY: process.env.APP_API_KEY,
@@ -144,11 +146,26 @@ export default {
       "
     >
       <p>
-        <span class="badge rounded-pill text-bg-primary">เพิ่มสินค้า</span>
+        <span
+          class="badge rounded-pill text-bg-primary"
+          v-if="updateProduct.action == true"
+          >เพิ่มสินค้า</span
+        >
+      </p>
+      <p>
+        <span
+          class="badge rounded-pill text-bg-warning"
+          v-if="updateProduct.action == false"
+          >เเก้ไขสินค้า</span
+        >
       </p>
       <div class="row">
         <div class="col-md-2">ชื่อสินค้า</div>
-        <input type="hidden" v-model="formProduct.id" v-if="updateProduct.action == false">
+        <input
+          type="hidden"
+          v-model="formProduct.id"
+          v-if="updateProduct.action == false"
+        />
         <div class="col-md-10">
           <div class="mb-3" v-if="updateProduct.action == true">
             <input
@@ -232,19 +249,20 @@ export default {
       </div>
       <div id="btn-create-product" v-if="updateProduct.action == false">
         <button class="btn-main-edit btn-edit-product">เเก้ไข</button>
-        <button class="btn-main-reset btn-reset-product" @click="resetPage()">เพิ่มสินค้า</button>
+        <button class="btn-main-reset btn-reset-product" @click="resetPage()">
+          เพิ่มสินค้า
+        </button>
       </div>
     </form>
   </div>
 </template>
 
 <style scoped>
-
 #btn-create-product {
   float: right;
 }
 .btn-main-create {
-  background-color: #3B5AD9 ; /* Green */
+  background-color: #3b5ad9; /* Green */
   border: none;
   color: white;
   padding: 2px;
@@ -267,14 +285,14 @@ export default {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 .btn-create-product:hover {
-  box-shadow: 10px rgba(0, 0, 0, 0.24),0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 10px rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn-main-edit {
-  background-color: #82800a;
+  background-color: rgb(249, 203, 19);
   border: none;
   color: white;
-  padding:2px;
+  padding: 2px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -299,17 +317,17 @@ export default {
 }
 
 .btn-main-reset {
-  background-color: #505514 ; 
+  background-color: #505514;
   border: none;
   color: white;
-  padding:2px;
+  padding: 2px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 12px;
   margin: 5px;
   cursor: pointer;
-  -webkit-transition-duration: 0.4s; 
+  -webkit-transition-duration: 0.4s;
   transition-duration: 0.2s;
 }
 
@@ -332,7 +350,6 @@ export default {
 }
 
 .form-control:hover {
-  border: 1px solid #4C47BF;
+  border: 1px solid #4c47bf;
 }
-
 </style>
