@@ -11,7 +11,20 @@ class ProductController extends BaseController
 
     public function productAll()
     {
-        $products = $this->exportAll($this->findAll('products', 'ORDER BY created_at DESC LIMIT 5'));
+        $body = $this->request['QueryString'];
+
+        $search = "where 1=1";
+        if (!empty($body['search'])) {
+            $key = conText($body['search']);
+            $search = "where (name like '%{$key}%' or description like '%{$key}%' or price like '%{$key}%' or stock_quantity like '%{$key}%')";
+        }
+
+        $limit = "limit 5";
+        if (!empty($body['limit'])) {
+            $limit = "limit {$body['limit']}";
+        }
+
+        $products =  $this->getAll("select * from products {$search} order by created_at desc {$limit}");
         return ['status' => 200, 'msg' => '', 'data' => $products];
     }
 
@@ -87,7 +100,7 @@ class ProductController extends BaseController
 
         $product = $this->findOne('products', 'id = ?', [$productId]);
         if ($product) {
-            $product  = $this->load('products', $productId);
+            $product = $this->load('products', $productId);
             $product->name = $name;
             $product->description = conText($body['description']);
             $product->price = conText($body['price']);

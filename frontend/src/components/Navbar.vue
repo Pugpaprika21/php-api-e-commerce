@@ -1,15 +1,19 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
 import { getProductById } from "../../utils/products";
+import { checkUserLogin } from "../../utils/user";
 
 export default {
   data() {
     return {
       appName: "",
+      navbarRole: "",
     };
   },
   mounted() {
+    checkUserLogin();
     this.appName = process.env.APP_NAME;
+    this.navbarRole = localStorage.getItem("Roles");
   },
 };
 </script>
@@ -33,7 +37,8 @@ export default {
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item" v-if="navbarRole.includes('2')">
+            <!-- admin -->
             <RouterLink
               class="nav-link active"
               :to="{ name: 'product-home' }"
@@ -41,6 +46,7 @@ export default {
               >จัดการสินค้า</RouterLink
             >
           </li>
+
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -83,6 +89,6 @@ export default {
 <style scoped>
 .navbar-main {
   color: #ffffff;
-  background-color: #471115;
+  background-color: #4c47bf;
 }
 </style>

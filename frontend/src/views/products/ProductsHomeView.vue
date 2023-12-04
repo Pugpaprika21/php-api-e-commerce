@@ -1,4 +1,5 @@
 <script>
+import { checkAdminPage } from '../../../utils/user';
 import Navbar from "../../components/Navbar.vue";
 import ProductsCreateView from "./ProductsCreateView.vue";
 import ProductsTableView from "./ProductsTableView.vue";
@@ -8,6 +9,9 @@ export default {
     Navbar,
     ProductsCreateView,
     ProductsTableView,
+  },
+  mounted() {
+    checkAdminPage(localStorage.getItem("Roles"));
   },
 };
 </script>

@@ -32,7 +32,8 @@ export default {
       }
     },
     actionProductDelete: function (productId) {
-      this.$axios.delete(`${process.env.VUE_BACKEND_URL}products/productDelete.php`, {
+      this.$axios
+        .delete(`${process.env.VUE_BACKEND_URL}products/productDelete.php`, {
           data: {
             productId: parseInt(productId),
             APP_API_KEY: process.env.APP_API_KEY,
@@ -57,7 +58,8 @@ export default {
         });
     },
     actionProductEdit: function (productId) {
-      this.$axios.get(`${process.env.VUE_BACKEND_URL}products/productEdit.php`, {
+      this.$axios
+        .get(`${process.env.VUE_BACKEND_URL}products/productEdit.php`, {
           params: {
             productId: parseInt(productId),
             APP_API_KEY: process.env.APP_API_KEY,
@@ -66,7 +68,8 @@ export default {
         .then((response) => {
           if (response.status == 200) {
             let productId = response.data.data.Data.Id;
-            window.location.href = "/product/home?params=" + productId;
+            window.location.href =
+              "/e-commerce/product/home?params=" + productId;
             return;
           }
         })
@@ -86,7 +89,7 @@ export default {
     :class="[`btn-main-${action}`, `btn-${action}`]"
     @click="btnActionProduct($event)"
   >
-    {{ btnName }}
+    <slot></slot>
   </button>
 </template>
 

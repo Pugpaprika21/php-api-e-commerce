@@ -1,5 +1,6 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
+import { saveUserLogin } from "/utils/user.js";
 
 export default {
   data() {
@@ -29,13 +30,17 @@ export default {
                 timer: 1000,
               })
               .then((result) => {
-                //this.$router.push({ name: "login" });
+                saveUserLogin(response.data.data.Data.User);
+                this.$router.push({ name: "home" });
               });
           }
         })
         .catch((err) => {
           console.log(err);
         });
+    },
+    mounted() {
+      localStorage.clear;
     },
   },
 };
@@ -90,7 +95,7 @@ export default {
 
 <style>
 .btn-login {
-  background-color: #262382;
+  background-color: #4C47BF;
   border: none;
   color: white;
   padding: 10px;

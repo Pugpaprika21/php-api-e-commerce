@@ -117,7 +117,7 @@ export default {
 
 <style>
 .btn-register-main {
-  background-color: #262382;
+  background-color:#4C47BF;
   border: none;
   color: white;
   padding: 15px 32px;

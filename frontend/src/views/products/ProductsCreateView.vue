@@ -27,39 +27,19 @@ export default {
     },
     formCreateProduct: function () {
       if (this.formProduct.name == "") {
-        this.$swal.fire({
-          title: "ใส่ชื่อสินค้า...",
-          text: "",
-          icon: "warning",
-          timer: 1000,
-        });
+        this.$swal.fire({title: "ใส่ชื่อสินค้า...", text: "", icon: "warning", timer: 1000});
         return;
       }
       if (this.formProduct.description == "") {
-        this.$swal.fire({
-          title: "ใส่รายละเอียดสินค้า...",
-          text: "",
-          icon: "warning",
-          timer: 1000,
-        });
+        this.$swal.fire({ title: "ใส่รายละเอียดสินค้า...", text: "", icon: "warning", timer: 1000});
         return;
       }
       if (this.formProduct.price == "") {
-        this.$swal.fire({
-          title: "ใส่ราคาสินค้า...",
-          text: "",
-          icon: "warning",
-          timer: 1000,
-        });
+        this.$swal.fire({title: "ใส่ราคาสินค้า...", text: "", icon: "warning", timer: 1000});
         return;
       }
       if (this.formProduct.stock_quantity == "") {
-        this.$swal.fire({
-          title: "ใส่จำนวนสินค้า...",
-          text: "",
-          icon: "warning",
-          timer: 1000,
-        });
+        this.$swal.fire({title: "ใส่จำนวนสินค้า...", text: "", icon: "warning", timer: 1000});
         return;
       }
 
@@ -74,8 +54,7 @@ export default {
         })
         .then((response) => {
           if (response.status == 200) {
-            this.$swal
-              .fire({
+            this.$swal.fire({
                 title: response.data.data.Msg,
                 text: "",
                 icon: "success",
@@ -147,7 +126,7 @@ export default {
       this.updateProduct.action = true;
     },
     resetPage: function () {
-      window.location.href = "/product/home";
+      window.location.href = "/e-commerce/product/home";
     },
   },
   mounted() {
@@ -345,6 +324,15 @@ export default {
 
 .btn-main-reset:hover {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-control {
+  border: 1px solid #ccc;
+  transition: border 0.3s ease;
+}
+
+.form-control:hover {
+  border: 1px solid #4C47BF;
 }
 
 </style>

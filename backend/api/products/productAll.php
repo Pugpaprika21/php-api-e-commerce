@@ -4,7 +4,7 @@ require(__DIR__ . "../../../includes/dependency.php");
 require(__DIR__ . "../../../controllers/products/ProductController.php");
 
 $api->setMethodAllowed('get');
-//$api->setUnauthorized($request['Ajax']['APP_API_KEY']);
+$api->setUnauthorized($request['QueryString']['APP_API_KEY']);
 
 $product = new ProductController($request);
 

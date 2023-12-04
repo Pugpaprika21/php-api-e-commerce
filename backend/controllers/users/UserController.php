@@ -67,7 +67,15 @@ class UserController extends BaseController
         $user = $this->getAll("select * from users where username = ?", [$username]);
         if (!empty($user)) {
             if (password_verify($password, $user[0]['password'])) {
-                return ['status' => 200, 'msg' => 'เข้าสู่ระบบสำเร็จ', 'data' => $user];
+                $roleList = [];
+                $roles = $this->getAll("select distinct role_id from rolesetting where user_id = ?", [$user[0]['id']]);
+                foreach ($roles as $role) {
+                    $roleList[] = $role['role_id'];
+                }
+                
+                $userData = ['user' => ['detail' => $user[0], 'roles' => join(', ', $roleList)]];
+
+                return ['status' => 200, 'msg' => 'เข้าสู่ระบบสำเร็จ', 'data' => $userData];
             }
         }
         return ['status' => 204, 'msg' => 'รหัสผ่านไม่ถูกต้อง'];
