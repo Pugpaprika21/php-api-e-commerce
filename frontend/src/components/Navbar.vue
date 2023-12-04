@@ -1,20 +1,25 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
+import { getProductById } from "../../utils/products";
+
 export default {
   data() {
     return {
-      appName: ""
-    }
+      appName: "",
+    };
   },
-  mounted() {  
-    this.appName = process.env.APP_NAME
+  mounted() {
+    this.appName = process.env.APP_NAME;
   },
 };
 </script>
+
 <template>
   <nav class="navbar navbar-expand-lg navbar-main">
     <div class="container-fluid">
-      <RouterLink class="nav-link active" :to="{ name: 'home' }"><b>{{ appName }}</b></RouterLink>
+      <RouterLink class="nav-link active" :to="{ name: 'home' }"
+        ><b>{{ appName }}</b></RouterLink
+      >
       <button
         class="navbar-toggler"
         type="button"
@@ -29,28 +34,44 @@ export default {
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <RouterLink class="nav-link active" :to="{ name: 'product-home' }" style="color: #FFFFFF;">จัดการสินค้า</RouterLink
+            <RouterLink
+              class="nav-link active"
+              :to="{ name: 'product-home' }"
+              style="color: #ffffff"
+              >จัดการสินค้า</RouterLink
             >
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #FFFFFF;">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="color: #ffffff"
+            >
               Dropdown
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
+              <li><hr class="dropdown-divider" /></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color: #FFFFFF;">Features</a>
+            <a class="nav-link" href="#" style="color: #ffffff">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color: #FFFFFF;">Pricing</a>
+            <a class="nav-link" href="#" style="color: #ffffff">Pricing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true" style="color: #FFFFFF;">Disabled</a>
+            <a
+              class="nav-link disabled"
+              aria-disabled="true"
+              style="color: #ffffff"
+              >Disabled</a
+            >
           </li>
         </ul>
       </div>
@@ -61,7 +82,7 @@ export default {
 <!--  #3ee0a2 -->
 <style scoped>
 .navbar-main {
-  color: #FFFFFF;
-  background-color: rgba(54, 14, 109, 0.819) ;
+  color: #ffffff;
+  background-color: #471115;
 }
 </style>

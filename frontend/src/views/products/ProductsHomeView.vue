@@ -1,19 +1,26 @@
 <script>
+import Navbar from "../../components/Navbar.vue";
 import ProductsCreateView from "./ProductsCreateView.vue";
 import ProductsTableView from "./ProductsTableView.vue";
 
 export default {
   components: {
+    Navbar,
     ProductsCreateView,
-    ProductsTableView
+    ProductsTableView,
   },
 };
 </script>
 
 <template>
-  <div class="container" id="product-home-main">
-    <ProductsCreateView></ProductsCreateView>
-    <ProductsTableView></ProductsTableView>
+  <div id="product-home-main">
+    <header>
+      <Navbar></Navbar>
+    </header>
+    <div class="container">
+      <ProductsCreateView></ProductsCreateView>
+      <ProductsTableView></ProductsTableView>
+    </div>
   </div>
 </template>
 
