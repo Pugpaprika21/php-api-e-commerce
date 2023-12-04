@@ -25,7 +25,7 @@ if (!empty($env['DB_NAME'])) {
 }
 
 if (!empty($env['CLASS_API']) && $env['CLASS_API'] == true) { 
-    $api = new APIService();
+    $api = new APIService($env);
     $request = $api->getRequest();
 }
 

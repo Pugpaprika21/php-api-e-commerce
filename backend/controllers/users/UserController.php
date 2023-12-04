@@ -9,20 +9,6 @@ class UserController extends BaseController
         $this->request = $body;
     }
 
-    public function findUserById()
-    {
-        $body = $this->request['user'];
-
-        $userId = conText($body['user_id']);
-        $user = $this->findOne('users', 'id = ?', [$userId]);
-        if ($user) {
-            $user = $this->exportAll($user)[0];
-            $this->close();
-            return ['status' => 200, 'msg' => 'find user successfully..', 'data' => $user];
-        }
-        return ['status' => 204, 'msg' => 'The user has no information.'];
-    }
-
     public function register()
     {
         $body = $this->request['Ajax']['formRegister'];

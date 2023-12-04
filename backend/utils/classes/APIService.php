@@ -2,6 +2,19 @@
 
 class APIService
 {
+    /*** @var array */
+    private $env;
+
+    public function __construct($env)
+    {
+        $this->env = $env;
+    }
+
+    /**
+     * Set allowed HTTP method.
+     *
+     * @param string $method - The allowed HTTP method (default is 'POST').
+     */
     public function setMethodAllowed($method = 'POST')
     {
         if ($_SERVER['REQUEST_METHOD'] != strtoupper($method)) {
@@ -11,16 +24,26 @@ class APIService
         }
     }
 
+    /**
+     * Check API key for authorization.
+     *
+     * @param string $key - The API key to check for authorization.
+     */
     public function setUnauthorized($key = "")
     {
-        global $env;
-        if ($env['APP_API_KEY'] != $key) {
+        if ($this->env['APP_API_KEY'] != $key) {
             header('HTTP/1.1 401 Unauthorized');
             echo $this->setResponseJSON(['msg' => '401 Unauthorized'], 401);
             exit;
         }
     }
 
+    /**
+     * Set JSON response.
+     *
+     * @param array $data - The data to be included in the response.
+     * @param int $statusCode - The HTTP status code (default is 200).
+     */
     public function setResponseJSON($arr, $statusCode = 200)
     {
         if (!empty($arr['status'])) {
@@ -31,6 +54,11 @@ class APIService
         return json_encode(['data' => arr_upr($arr)], JSON_UNESCAPED_UNICODE);
     }
 
+    /**
+     * Get and merge various types of requests.
+     *
+     * @return array - The merged array of different request types.
+     */
     public function getRequest()
     {
         return array_merge([
