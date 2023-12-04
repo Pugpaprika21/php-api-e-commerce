@@ -24,7 +24,7 @@ export default {
           },
         })
         .then((response) => {
-          if (response.status == 200) {
+          if (response.status == 201) {
             this.$swal
               .fire({
                 title: response.data.data.Msg,

@@ -54,7 +54,7 @@ class UserController extends BaseController
         $this->store($roleSett);
         $this->close();
 
-        return ['status' => 200, 'msg' => 'ลงทะเบียนสำเร็จ'];
+        return ['status' => 201, 'msg' => 'ลงทะเบียนสำเร็จ'];
     }
 
     public function login()
