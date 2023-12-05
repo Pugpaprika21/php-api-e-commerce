@@ -2,12 +2,20 @@
 
 class APIService
 {
+    // $api->saveLogResponse $api->saveLogRequest
+
     /*** @var array */
     private $env;
 
     public function __construct($env)
     {
         $this->env = $env;
+    }
+
+    public function getConfig()
+    {
+        $configs = func_get_args();
+        return $configs;
     }
 
     /**
@@ -34,6 +42,24 @@ class APIService
         if ($this->env['APP_API_KEY'] != $key) {
             header('HTTP/1.1 401 Unauthorized');
             echo $this->setResponseJSON(['msg' => '401 Unauthorized'], 401);
+            exit;
+        }
+    }
+
+    public function getHeadersAuthorization()
+    {
+        $token = null;
+        $headers = apache_request_headers();
+        if (isset($headers['Authorization'])) {
+            $matches = [];
+            preg_match('/Token token="(.*)"/', $headers['Authorization'], $matches);
+            if (isset($matches[1])) {
+                $token = $matches[1];
+            }
+        }
+
+        if (is_null($token)) {
+            echo $this->setResponseJSON(['msg' => 'Authorization Error..'], 500);
             exit;
         }
     }

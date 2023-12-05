@@ -8,6 +8,7 @@ $api->setUnauthorized($request['QueryString']['APP_API_KEY']);
 
 $product = new ProductController($request);
 
-write_log(__DIR__ . "../../../logs/requests/" . ProductController::class . ".txt", $request, $env['WRITE_LOG']);
+write_log($apps['log']['req'] . ProductController::class . ".txt", $request, $env['WRITE_LOG']);
 echo $api->setResponseJSON($product->productAll());
 exit;
+

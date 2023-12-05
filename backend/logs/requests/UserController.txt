@@ -1079,3 +1079,72 @@
     ),
   ),
 )
+[data 2023-12-05 08:13:34] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => 
+  array (
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+    'formLogin' => 
+    array (
+      'username' => 'admin',
+      'password' => '123',
+    ),
+  ),
+)
+[data 2023-12-05 08:13:47] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => 
+  array (
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+    'formLogin' => 
+    array (
+      'username' => 'test',
+      'password' => 'test',
+    ),
+  ),
+)
+[data 2023-12-05 08:23:44] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => 
+  array (
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+    'formLogin' => 
+    array (
+      'username' => 'test',
+      'password' => 'test',
+    ),
+  ),
+)

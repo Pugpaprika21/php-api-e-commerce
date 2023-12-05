@@ -43,3 +43,8 @@ body {
 .form-control {
     border-radius: 0px;
 }
+
+.input-group-text {
+    color: #FFFFFF;
+    background-color: #8A89A8;
+}

@@ -11,21 +11,40 @@ class ProductController extends BaseController
 
     public function productAll()
     {
-        $body = $this->request['QueryString'];
+        // $body = $this->request['QueryString'];
 
-        $search = "where 1=1";
+        // $search = "where 1=1";
+        // if (!empty($body['search'])) {
+        //     $key = conText($body['search']);
+        //     $search = "where (name like '%{$key}%' or description like '%{$key}%' or price like '%{$key}%' or stock_quantity like '%{$key}%')";
+        // }
+
+        // $limit = "limit 5";
+        // if (!empty($body['limit'])) {
+        //     $limit = "limit {$body['limit']}";
+        // }
+
+        // $productTotal = $this->getAll("select count(*) as total from products order by created_at desc {$limit}")[0];
+        // $products = $this->getAll("select * from products {$search} order by created_at desc {$limit}");
+        // return ['status' => 200, 'msg' => '', 'data' => $products, 'totalProduct' => $productTotal];
+
+        // In your PHP code
+        
+        $page = !empty($body['page']) ? (int)$body['page'] : 1;
+        $limit = !empty($body['limit']) ? (int)$body['limit'] : 10;
+
+        $offset = ($page - 1) * $limit;
+
+        $search = "WHERE 1=1";
         if (!empty($body['search'])) {
             $key = conText($body['search']);
-            $search = "where (name like '%{$key}%' or description like '%{$key}%' or price like '%{$key}%' or stock_quantity like '%{$key}%')";
+            $search = "WHERE (name LIKE '%{$key}%' OR description LIKE '%{$key}%' OR price LIKE '%{$key}%' OR stock_quantity LIKE '%{$key}%')";
         }
 
-        $limit = "limit 5";
-        if (!empty($body['limit'])) {
-            $limit = "limit {$body['limit']}";
-        }
+        $productTotal = $this->getAll("SELECT COUNT(*) as total FROM products {$search}")[0];
+        $products = $this->getAll("SELECT * FROM products {$search} ORDER BY created_at DESC LIMIT {$offset}, {$limit}");
 
-        $products =  $this->getAll("select * from products {$search} order by created_at desc {$limit}");
-        return ['status' => 200, 'msg' => '', 'data' => $products];
+        return ['status' => 200, 'msg' => '', 'data' => $products, 'totalProduct' => $productTotal];
     }
 
     public function productCreate()
