@@ -24,9 +24,10 @@ export default {
   },
   methods: {
     getProductAll: function (cPage = 0) {
-      this.$axios.get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
+      this.$axios
+        .get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
           params: {
-            page: cPage,
+            page: this.currentPage,
             limit: this.filterProduct.limit,
             search: this.filterProduct.search,
             APP_API_KEY: process.env.APP_API_KEY,
@@ -48,13 +49,12 @@ export default {
         });
     },
     changePage(page) {
-  if (page >= 1 && page <= this.totalPages) {
-    this.currentPage = page;
-    this.getProductAll(this.currentPage); // Pass the current page as a parameter
-    console.log(this.currentPage);
-  }
-},
-
+      if (page >= 1 && page <= this.totalPages) {
+        this.currentPage = page;
+        this.getProductAll();
+        console.log(this.currentPage);
+      }
+    },
   },
   computed: {
     totalPages() {
