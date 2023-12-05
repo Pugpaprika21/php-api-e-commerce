@@ -7,6 +7,8 @@ export default {
   data() {
     return {
       productsList: [],
+      limit: 5,
+      currentPage: 5,
     };
   },
   components: {
@@ -19,6 +21,8 @@ export default {
       this.$axios
         .get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
           params: {
+            page: this.currentPage,
+            limit: this.limit,
             APP_API_KEY: process.env.APP_API_KEY,
           },
         })
@@ -41,7 +45,7 @@ export default {
 <template>
   <div class="row" id="product-list">
     <div class="col-md-12">
-      <span class="badge rounded-pill text-bg-primary"
+      <span class="badge rounded-pill text-bg-primary mb-2"
         >รายการสินค้า
         <RouterLink
           class="link-offset-2 link-underline link-underline-opacity-0"
@@ -52,7 +56,7 @@ export default {
       </span>
     </div>
     <div class="product-table-list">
-      <table class="table table-hover align-middle">
+      <table class="table table-hover align-middle" id="products-table">
         <thead>
           <tr>
             <th scope="col">#</th>

@@ -29,10 +29,10 @@ class ProductController extends BaseController
             $offset = "offset {$body['page']}";
         }
 
-        $productTotal = $this->getAll("select count(*) as total from products order by created_at desc {$limit}")[0];
+        $total = $this->getAll("select count(*) as total from products order by created_at desc {$limit}")[0];
         $products = $this->getAll("select * from products {$search} order by created_at desc {$limit} {$offset}");
 
-        return ['status' => 200, 'msg' => '', 'data' => $products, 'totalProduct' => $productTotal];
+        return ['status' => 200, 'msg' => '', 'data' => $products, 'totalProduct' => $total];
     }
 
     public function productCreate()

@@ -1,0 +1,6 @@
+
+              $beet1 = !empty($body['limit']) ? $body['limit'] : 1;
+        $beet2 = !empty($body['page']) ? $body['page'] : 10;
+
+        
+//$products = $this->getAll("SELECT * FROM(SELECT*, ROW_NUMBER() OVER(ORDER BY created_at DESC) AS row_num FROM products {$search}) AS numbered_products WHERE row_num BETWEEN {$beet1} AND {$beet2}");

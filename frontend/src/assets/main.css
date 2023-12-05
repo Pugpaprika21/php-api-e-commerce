@@ -48,3 +48,31 @@ body {
     color: #FFFFFF;
     background-color: #8A89A8;
 }
+
+#products-table th {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+    background-color: #6460a7;
+    color: white;
+}
+
+#products-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#products-table td,
+#products-table th {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#products-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#products-table tr:hover {
+    background-color: #ddd;
+}

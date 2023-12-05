@@ -9,47 +9,56 @@ class OrdersController extends BaseController
         $this->request = $body;
     }
 
-    public function ordersAll()
+    public function createOrders()
     {
-        $orders = $this->exportAll($this->findAll('orders', 'order by created_at desc'));
-        if (count($orders) > 0) {
-            return ['status' => 200, 'data' => $orders];
-        }
-        return ['status' => 200, 'data' => $orders];
-    }
+        $body = $this->request['Ajax']['formOrders'];
 
-    public function getOrderById()
-    {
-        $body = $this->request['QueryString'];
-
-        $orderId = conText($body['order_id']);
-        $order = $this->findOne('orders', 'id = ?', [$orderId]);
-        if ($order) {
-            $order = $this->exportAll($order)[0];
-            return ['status' => 200, 'data' => $order];
-        }
-        return ['status' => 204];
-    }
-
-    public function create()
-    {
-        $body = $this->request['order'];
-
-        $userId = conText($body['user_id']);
-
-        $user = $this->findOne('users', 'id = ?', [$userId]);
-        if ($user) {
+        $totalAmount = 0;
+        $userId = conText($body['userId']);
+        if (count($body['orders']) > 0) {
+            foreach ($body['orders'] as $orderVal) {
+                $totalAmount += $orderVal['totalAmount'];
+            }
             $order = $this->dispense('orders');
             $order->user_id = $userId;
             $order->order_date = date('Y-m-d');
-            $order->total_amount = conText($body['total_amount']);
+            $order->total_amount = $totalAmount;
+            $order->order_status = 'Pending';
             $this->store($order);
+
+            if ($order->id) {
+                foreach ($body['orders'] as $orderVal) {
+                    $orderItem = $this->dispense('orderitems');
+                    $orderItem->order_id = $order->id;
+                    $orderItem->product_id = $orderVal['productId'];
+                    $orderItem->quantity = $orderVal['totalAmount'];
+                    $unitPrice = ($orderVal['totalAmount'] / $orderVal['stockQuantity']);
+                    $orderItem->unit_price = $unitPrice;
+                    $orderItem->subtotal = ($unitPrice * $orderVal['stockQuantity']);
+                    $this->store($orderItem);
+                }
+            }
             $this->close();
 
-            $newOrder = $this->exportAll($this->findOne('orders', 'id = ?', [$order->id]))[0];
-
-            return ['status' => 200, 'msg' => 'create order successfully..', 'data' => $newOrder];
+            return ['status' => 200, 'msg' => 'เพิ่มรายการสั่งซื้อสำเร็จ'];
         }
-        return ['status' => 204, 'msg' => 'user order not found..'];
+        return ['status' => 200, 'msg' => 'ทำรายการสั่งซื้อไม่สำเร็จ'];
+    }
+
+    public function getOrders()
+    {
+        $body = $this->request['QueryString'];
+        
+        $userId = conText($body['userId']);
+
+        $totalOrder = $this->getCell("
+            SELECT COUNT(*) AS totalOrder
+            FROM orders
+            INNER JOIN orderitems ON orders.id = orderitems.order_id
+            WHERE orders.user_id = ?",
+            [$userId]
+        );
+
+        return ['status' => 200, 'msg' => '', ['totalOrders' => $totalOrder]];
     }
 }

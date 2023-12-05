@@ -11,6 +11,8 @@ export default {
         limit: 10,
         search: "",
       },
+      currentPage: 10,
+      totalProducts: 0,
       productsList: [],
     };
   },
@@ -21,10 +23,10 @@ export default {
     IconBtnDelProduct,
   },
   methods: {
-    getProductAll: function () {
-      this.$axios
-        .get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
+    getProductAll: function (cPage = 0) {
+      this.$axios.get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
           params: {
+            page: cPage,
             limit: this.filterProduct.limit,
             search: this.filterProduct.search,
             APP_API_KEY: process.env.APP_API_KEY,
@@ -33,6 +35,8 @@ export default {
         .then((response) => {
           if (response.status == 200) {
             this.productsList = response.data.data.Data;
+            this.totalProducts = response.data.data.TotalProduct.Total;
+            console.log(response.data.data.TotalProduct.Total);
             return;
           }
           this.filterProduct.limit = 10;
@@ -42,6 +46,23 @@ export default {
         .catch((err) => {
           console.log(err);
         });
+    },
+    changePage(page) {
+      if (page >= 1 && page <= this.totalPages) {
+        this.currentPage = page;
+        this.getProductAll(page - 1);
+        console.log(this.currentPage);
+      }
+    },
+  },
+  computed: {
+    totalPages() {
+      return Math.ceil(this.totalProducts / this.filterProduct.limit);
+    },
+    paginatedProducts() {
+      let start = (this.currentPage - 1) * this.filterProduct.limit;
+      let end = start + this.filterProduct.limit;
+      return this.productsList.slice(start, end);
     },
   },
   mounted() {
@@ -57,7 +78,6 @@ export default {
     </header>
     <div class="container">
       <div class="row" id="product-list">
-
         <div class="row">
           <div class="col-md-8 mt-3">
             <b
@@ -68,6 +88,9 @@ export default {
           </div>
           <div class="col-md-2 mt-3">
             <div class="input-group input-group-sm mb-3">
+              <label class="input-group-text" for="inputGroupSelect01"
+              >ข้อมูล</label
+            >
               <select
                 class="form-select"
                 v-model="filterProduct.limit"
@@ -98,7 +121,7 @@ export default {
 
         <div class="col-md-12 mt-3">
           <div class="product-table-list">
-            <table class="table table-hover align-middle">
+            <table class="table table-hover align-middle" id="products-table">
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -124,16 +147,41 @@ export default {
                     ></ProductBtnTable>
                     &nbsp;
                     <ProductBtnTable :action="`edit`" :productId="product.Id"
-                      ><IconBtnEditProduct></IconBtnEditProduct 
+                      ><IconBtnEditProduct></IconBtnEditProduct
                     ></ProductBtnTable>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <div class="product-pagination">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-end">
+                <li class="page-item" :class="{ disabled: currentPage === 1 }">
+                  <a class="page-link" @click="changePage(currentPage - 1)"
+                    >Previous</a
+                  >
+                </li>
+                <li
+                  v-for="page in totalPages"
+                  :key="page"
+                  class="page-item"
+                  :class="{ active: currentPage === page }"
+                >
+                  <a class="page-link" @click="changePage(page)">{{ page }}</a>
+                </li>
+                <li
+                  class="page-item"
+                  :class="{ disabled: currentPage === totalPages }"
+                >
+                  <a class="page-link" @click="changePage(currentPage + 1)"
+                    >Next</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
-
-        
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 <script>
-import IconAddToCartProduct from "../components/icons/IconAddToCartProduct.vue";
 import IconBtnDelProduct from "../components/icons/IconBtnDelProduct.vue";
 import IconBtnEditProduct from "../components/icons/IconBtnDelProduct.vue";
+import IconAddToCartProduct from "../components/icons/IconAddToCartProduct.vue";
 import Navbar from "../components/Navbar.vue";
 
 export default {
@@ -11,9 +11,11 @@ export default {
         limit: 10,
         search: "",
       },
-      currentPage: 20,
+      currentPage: 10,
       totalProducts: 0,
       productsList: [],
+      ordersAddToCart: [],
+      totalOrders: 0
     };
   },
   components: {
@@ -24,10 +26,9 @@ export default {
   },
   methods: {
     getProductAll: function (cPage = 0) {
-      this.$axios
-        .get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
+      this.$axios.get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
           params: {
-            page: this.currentPage,
+            page: cPage,
             limit: this.filterProduct.limit,
             search: this.filterProduct.search,
             APP_API_KEY: process.env.APP_API_KEY,
@@ -37,7 +38,6 @@ export default {
           if (response.status == 200) {
             this.productsList = response.data.data.Data;
             this.totalProducts = response.data.data.TotalProduct.Total;
-            console.log(response.data.data.TotalProduct.Total);
             return;
           }
           this.filterProduct.limit = 10;
@@ -48,26 +48,91 @@ export default {
           console.log(err);
         });
     },
-    changePage(page) {
+    changePage: function (page) {
       if (page >= 1 && page <= this.totalPages) {
         this.currentPage = page;
-        this.getProductAll();
-        console.log(this.currentPage);
+        this.getProductAll(page - 1);
       }
     },
+    getOrdersToCart: function (product) {
+      let orders = {
+        productId: product.Id,
+        stockQuantity: product.StockQuantity,
+        totalAmount: product.TotalAmount,
+      };
+      console.log(`product`, product.Id); // check จำนวน คลัง (ชิ้น)
+      this.ordersAddToCart.push(orders);
+    },
+    saveOrdersToCart: function () {
+      if (this.ordersAddToCart.length > 0) {
+        this.$axios.post(`${process.env.VUE_BACKEND_URL}orders/createOrders.php`, {
+            APP_API_KEY: process.env.APP_API_KEY,
+            formOrders: {
+              userId: parseInt(sessionStorage.getItem("Id")),
+              orders: this.ordersAddToCart,
+            },
+          })
+          .then((response) => {
+            if (response.status == 200) {
+              this.$swal.fire({
+                  title: response.data.data.Msg,
+                  text: "",
+                  icon: "success",
+                  timer: 1000,
+                })
+                .then((result) => {
+                  this.getTotalOrders();
+                  this.ordersAddToCart = [];
+                  this.$router.go(0);
+                });
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        return;
+      }
+      this.$swal.fire({
+        title: "ไม่พบรายการสั่งชิ้อ",
+        text: "",
+        icon: "warning",
+        timer: 1000,
+      })
+      .then((result) => {
+        this.getTotalOrders();
+      });
+    },
+    getTotalOrders: function() {
+      this.$axios.get(`${process.env.VUE_BACKEND_URL}orders/getOrders.php`, {
+          params: {
+            userId: parseInt(sessionStorage.getItem("Id")), 
+            APP_API_KEY: process.env.APP_API_KEY
+          },
+        })
+        .then((response) => {
+          if (response.status == 200) {
+            this.totalOrders = response.data.data[0].TotalOrders;
+            return;
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   },
   computed: {
-    totalPages() {
+    totalPages: function () {
       return Math.ceil(this.totalProducts / this.filterProduct.limit);
     },
-    paginatedProducts() {
+    paginatedProducts: function() {
       let start = (this.currentPage - 1) * this.filterProduct.limit;
       let end = start + this.filterProduct.limit;
       return this.productsList.slice(start, end);
     },
   },
-  mounted() {
+  mounted: function () {
     this.getProductAll();
+    this.getTotalOrders();
   },
 };
 </script>
@@ -81,7 +146,7 @@ export default {
       <div class="row" id="product-list">
         <div class="row">
           <div class="row">
-            <div class="col-md-8 mt-3">
+            <div class="col-md-6 mt-3">
               <b
                 ><span class="badge rounded-pill text-bg-primary"
                   >รายการสินค้า</span
@@ -106,6 +171,7 @@ export default {
                 </select>
               </div>
             </div>
+            <!--  -->
             <div class="col-md-2 mt-3">
               <div class="input-group input-group-sm mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-sm"
@@ -119,10 +185,31 @@ export default {
                 />
               </div>
             </div>
+            <div class="col-md-2 mt-3">
+              <a
+                href="#"
+                class="link-offset-2 link-underline link-underline-opacity-0"
+                @click="saveOrdersToCart()"
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เพิ่มในตระกร้า
+                &nbsp;</a
+              >
+              <span
+                class="badge position-relative"
+                style="background-color: #272f90"
+              >
+                <IconAddToCartProduct>
+                  เพิ่มในตระกร้า
+                </IconAddToCartProduct>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  >{{ totalOrders }}+</span
+                >
+              </span>
+            </div>
           </div>
         </div>
         <div class="col-md-12 mt-3">
-          <table class="table table-hover align-middle">
+          <table class="table table-hover align-middle" id="products-table">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -146,7 +233,9 @@ export default {
                     <input
                       type="number"
                       class="form-control"
-                      style="max-width: 30%"
+                      style="width: 100%"
+                      v-model="product.TotalAmount"
+                      @change.prevent="getOrdersToCart(product)"
                     />
                   </div>
                 </td>
@@ -186,3 +275,22 @@ export default {
     </div>
   </div>
 </template>
+
+<style scoped>
+@media screen and (max-width: 767px) {
+  .table th,
+  .table td {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .table th,
+  .table td {
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+</style>
