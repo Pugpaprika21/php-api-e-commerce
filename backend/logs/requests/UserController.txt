@@ -1171,3 +1171,26 @@
     ),
   ),
 )
+[data 2023-12-06 08:35:02] => array (
+  'Post' => 
+  array (
+  ),
+  'Any' => 
+  array (
+  ),
+  'FormFile' => 
+  array (
+  ),
+  'QueryString' => 
+  array (
+  ),
+  'Ajax' => 
+  array (
+    'APP_API_KEY' => 'QWERQDRFAQER1293@@U+-+1283U4-3473e7aa8drf',
+    'formLogin' => 
+    array (
+      'username' => 'test',
+      'password' => 'test',
+    ),
+  ),
+)

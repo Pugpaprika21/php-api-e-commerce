@@ -119,4 +119,19 @@ class ProductController extends BaseController
         }
         return ['status' => 204, 'msg' => '', 'data' => null];
     }
+
+    public function productCheckStockQuantity()
+    {
+        $body = $this->request['QueryString'];
+
+        $productId = conText($body['productId']);
+        $stockQuantity = conText($body['stockQuantity']);
+        $totalAmount = conText($body['totalAmount']);
+
+        $product = $this->findOne('products', 'id = ?', [$productId]);
+        if ($product) {
+            return ['status' => 200, 'msg' => '', 'data' => $product];
+        }
+        return ['status' => 400, 'msg' => 'Insufficient stock', 'data' => null];
+    }
 }

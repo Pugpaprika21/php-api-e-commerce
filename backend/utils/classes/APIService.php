@@ -2,20 +2,12 @@
 
 class APIService
 {
-    // $api->saveLogResponse $api->saveLogRequest
-
     /*** @var array */
     private $env;
 
     public function __construct($env)
     {
         $this->env = $env;
-    }
-
-    public function getConfig()
-    {
-        $configs = func_get_args();
-        return $configs;
     }
 
     /**
@@ -46,20 +38,18 @@ class APIService
         }
     }
 
-    public function getHeadersAuthorization()
+    /**
+     * Check API key for authorization.
+     *
+     * @param string $key - The API key to check for authorization.
+     */
+    public function setAuthorization()
     {
-        $token = null;
-        $headers = apache_request_headers();
-        if (isset($headers['Authorization'])) {
-            $matches = [];
-            preg_match('/Token token="(.*)"/', $headers['Authorization'], $matches);
-            if (isset($matches[1])) {
-                $token = $matches[1];
-            }
-        }
+        $header = $this->getRequest()['headers'];
 
-        if (is_null($token)) {
-            echo $this->setResponseJSON(['msg' => 'Authorization Error..'], 500);
+        if (empty($header['Authorization']) && strstr($header, $this->env['APP_API_KEY']) != $this->env['APP_API_KEY']) {
+            header('HTTP/1.1 401 Unauthorized');
+            echo $this->setResponseJSON(['msg' => 'Authorization header not found...']);
             exit;
         }
     }
@@ -88,11 +78,12 @@ class APIService
     public function getRequest()
     {
         return array_merge([
-            "Post" => $_POST,
-            "Any" => $_REQUEST,
-            "FormFile" => $_FILES,
-            "QueryString" => $_GET,
-            "Ajax" => json_decode(file_get_contents("php://input"), true)
+            'Post' => $_POST,
+            'Any' => $_REQUEST,
+            'FormFile' => $_FILES,
+            'QueryString' => $_GET,
+            'Ajax' => json_decode(file_get_contents('php://input'), true),
+            'headers' => getallheaders()
         ]);
     }
 }

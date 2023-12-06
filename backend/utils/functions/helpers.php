@@ -32,7 +32,7 @@ function arr_upr($input, $case = MB_CASE_TITLE)
     };
 
     if (is_object($input)) {
-        $input = get_object_vars($input);
+        $input = json_decode(json_encode($input), true);
     }
 
     $newArray = array();

@@ -54,14 +54,32 @@ export default {
         this.getProductAll(page - 1);
       }
     },
-    getOrdersToCart: function (product) {
+    productCheckStockQuantity: function(productId, stockQuantity, totalAmount) {
+      let params = `productId=${productId}&stockQuantity=${stockQuantity}&totalAmount=${totalAmount}`;
+      
+      this.$axios.get(`${process.env.VUE_BACKEND_URL}products/productCheckStockQuantity.php?${params}`, {
+          headers: {
+            Authorization: `Bearer ${process.env.APP_API_KEY}`
+          }
+        })
+        .then((response) => {
+          if (response.status == 200) {
+            console.log(response);
+            return;
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    setOrdersToCart: function (product) {
       let orders = {
         productId: product.Id,
         stockQuantity: product.StockQuantity,
         totalAmount: product.TotalAmount,
       };
-      console.log(`product`, product.Id); // check จำนวน คลัง (ชิ้น)
       this.ordersAddToCart.push(orders);
+      this.productCheckStockQuantity(product.Id, product.StockQuantity, product.TotalAmount);
     },
     saveOrdersToCart: function () {
       if (this.ordersAddToCart.length > 0) {
@@ -235,7 +253,7 @@ export default {
                       class="form-control"
                       style="width: 100%"
                       v-model="product.TotalAmount"
-                      @change.prevent="getOrdersToCart(product)"
+                      @change.prevent="setOrdersToCart(product)"
                     />
                   </div>
                 </td>
