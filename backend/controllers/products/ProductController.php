@@ -13,24 +13,25 @@ class ProductController extends BaseController
     {
         $body = $this->request['QueryString'];
 
-        $search = "where 1=1";
+        $search = "WHERE 1=1";
         if (!empty($body['search'])) {
             $key = conText($body['search']);
-            $search = "where (name like '%{$key}%' or description like '%{$key}%' or price like '%{$key}%' or stock_quantity like '%{$key}%')";
+            $search = "WHERE (name LIKE '%{$key}%' OR description LIKE '%{$key}%' OR price LIKE '%{$key}%' OR stock_quantity LIKE '%{$key}%')";
         }
 
-        $limit = "limit 1";
+        $limit = "LIMIT 1";
         if (!empty($body['limit'])) {
-            $limit = "limit {$body['limit']}";
+            $limit = "LIMIT {$body['limit']}";
         }
 
-        $offset = "offset 10";
+        $offset = "OFFSET 10";
         if (!empty($body['page'])) {
-            $offset = "offset {$body['page']}";
+            $offset = "OFFSET {$body['page']}";
         }
 
-        $total = $this->getAll("select count(*) as total from products order by created_at desc {$limit}")[0];
-        $products = $this->getAll("select * from products {$search} order by created_at desc {$limit} {$offset}");
+        $total = $this->getAll("SELECT COUNT(*) AS total FROM products ORDER BY created_at DESC {$limit}")[0];
+        
+        $products = $this->getAll("SELECT * FROM products {$search} ORDER BY created_at DESC {$limit} {$offset}");
 
         return ['status' => 200, 'msg' => '', 'data' => $products, 'totalProduct' => $total];
     }

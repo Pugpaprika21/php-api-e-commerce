@@ -18,8 +18,7 @@ export default {
   },
   methods: {
     getProductAll: function () {
-      this.$axios
-        .get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
+      this.$axios.get(`${process.env.VUE_BACKEND_URL}products/productAll.php`, {
           params: {
             page: this.currentPage,
             limit: this.limit,

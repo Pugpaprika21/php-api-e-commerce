@@ -55,9 +55,7 @@ export default {
       }
     },
     productCheckStockQuantity: function(productId, stockQuantity, totalAmount) {
-      let params = `productId=${productId}&stockQuantity=${stockQuantity}&totalAmount=${totalAmount}`;
-      
-      this.$axios.get(`${process.env.VUE_BACKEND_URL}products/productCheckStockQuantity.php?${params}`, {
+      this.$axios.get(`${process.env.VUE_BACKEND_URL}products/productCheckStockQuantity.php?productId=${productId}&stockQuantity=${stockQuantity}&totalAmount=${totalAmount}`, {
           headers: {
             Authorization: `Bearer ${process.env.APP_API_KEY}`
           }
@@ -84,11 +82,13 @@ export default {
     saveOrdersToCart: function () {
       if (this.ordersAddToCart.length > 0) {
         this.$axios.post(`${process.env.VUE_BACKEND_URL}orders/createOrders.php`, {
-            APP_API_KEY: process.env.APP_API_KEY,
             formOrders: {
               userId: parseInt(sessionStorage.getItem("Id")),
               orders: this.ordersAddToCart,
             },
+            headers: {
+              Authorization: `Bearer ${process.env.APP_API_KEY}`
+            }
           })
           .then((response) => {
             if (response.status == 200) {
