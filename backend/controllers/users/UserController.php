@@ -23,7 +23,7 @@ class UserController extends BaseController
 
         $user = $this->dispense('users');
         $user->username = $username;
-        $user->password = password_hash($password, PASSWORD_DEFAULT, ["cost" => 5]);
+        $user->password = password_hash($password, PASSWORD_DEFAULT, ['cost' => 5]);
         $user->first_name = '';
         $user->last_name = '';
         $user->email = $email;
@@ -31,7 +31,7 @@ class UserController extends BaseController
         $user->phone_number = conText($body['phone_number']);
         $this->store($user);
 
-        $role = $this->getAll("select id from roles where id = ? and active_status = ?", ['1', 'Y'])[0];
+        $role = $this->getAll("SELECT id FROM roles WHERE id = ? AND active_status = ?", ['1', 'Y'])[0];
 
         $roleSett = $this->dispense('rolesetting');
         $roleSett->role_id = $role['id'];
@@ -50,11 +50,11 @@ class UserController extends BaseController
         $username = conText($body['username']);
         $password = conText($body['password']);
 
-        $user = $this->getAll("select * from users where username = ?", [$username]);
+        $user = $this->getAll("SELECT * FROM users WHERE username = ?", [$username]);
         if (!empty($user)) {
             if (password_verify($password, $user[0]['password'])) {
                 $roleList = [];
-                $roles = $this->getAll("select distinct role_id from rolesetting where user_id = ?", [$user[0]['id']]);
+                $roles = $this->getAll("SELECT DISTINCT role_id FROM rolesetting WHERE user_id = ?", [$user[0]['id']]);
                 foreach ($roles as $role) {
                     $roleList[] = $role['role_id'];
                 }
